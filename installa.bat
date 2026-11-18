@@ -28,9 +28,19 @@ echo Installo le dipendenze ...
 ".venv\Scripts\python.exe" -m pip install --disable-pip-version-check -r requirements.txt
 if errorlevel 1 goto errore
 
+if /i "%~1"=="/noshortcut" goto avvio
+set "SCORC=S"
+set /p "SCORC=Creare la scorciatoia sul desktop? [S/n] "
+if /i "%SCORC%"=="n" goto senza
+if /i "%SCORC%"=="no" goto senza
 echo Creo la scorciatoia sul desktop ...
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0crea_scorciatoia.ps1"
+goto avvio
 
+:senza
+echo Scorciatoia non creata. Puoi crearla quando vuoi con "Crea scorciatoia desktop.bat".
+
+:avvio
 echo.
 echo Installazione completata. Avvio DWG / DXF Studio ...
 start "" ".venv\Scripts\pythonw.exe" app.py

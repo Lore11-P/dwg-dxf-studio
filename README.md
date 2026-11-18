@@ -14,8 +14,8 @@ cd dwg-dxf-studio
 installa.bat
 ```
 
-`installa.bat` fa tutto: crea `.venv`, installa le dipendenze, crea la scorciatoia sul desktop
-e avvia l'app. Va eseguito una volta sola.
+`installa.bat` fa tutto: crea `.venv`, installa le dipendenze, **ti chiede se creare la
+scorciatoia sul desktop** e avvia l'app. Va eseguito una volta sola.
 Per aggiornare: `git pull` e di nuovo `installa.bat`.
 
 In una riga sola, da PowerShell (installa in `%USERPROFILE%\dwg-dxf-studio` e avvia):
@@ -54,8 +54,10 @@ Puoi anche passare subito un file: `"Avvia app.bat" "C:\disegni\pianta.dxf"`.
 ## Scorciatoia sul desktop
 
 Esegui una volta **`Crea scorciatoia desktop.bat`**: crea sul desktop la voce
-**DWG-DXF Studio** che avvia l'app con doppio clic (funziona anche se sposti la cartella,
-perché punta al percorso assoluto attuale; se sposti l'app, riesegui lo script).
+**DWG-DXF Studio** che avvia l'app con doppio clic. Punta al percorso attuale: se sposti
+la cartella, riesegui lo script.
+Durante l'installazione `installa.bat` te lo chiede: rispondi **S** per crearla subito,
+**N** per saltarla (potrai crearla dopo con questo stesso file).
 
 In alternativa, creala a mano: tasto destro sul desktop → **Nuovo → Scorciatoia** → sfoglia
 fino a `Avvia app.bat` → nome "DWG-DXF Studio".
