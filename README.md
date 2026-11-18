@@ -4,13 +4,33 @@ App desktop (Windows) per aprire disegni **DWG/DXF**, modificarli e convertirli 
 o **JPG**. Anteprima nella finestra, scelta della tavola (Model o layout di carta), formato pagina
 e risoluzione.
 
-## Installazione
+## Installazione rapida (da GitHub)
 
-Serve **Windows 10/11** e **Python 3.10 o successivo** (provato con 3.14).
-Per leggere e scrivere i **DWG** serve anche **ODA File Converter** (gratuito): vedi più sotto.
+Incolla nel terminale (PowerShell o Prompt dei comandi) questi comandi:
 
-Scarica la cartella da GitHub (pulsante **Code → Download ZIP**, oppure `git clone`) e, nella
-cartella dell'app:
+```
+git clone https://github.com/Lore11-P/dwg-dxf-studio.git
+cd dwg-dxf-studio
+installa.bat
+```
+
+`installa.bat` fa tutto: crea `.venv`, installa le dipendenze, crea la scorciatoia sul desktop
+e avvia l'app. Va eseguito una volta sola.
+Per aggiornare: `git pull` e di nuovo `installa.bat`.
+
+In una riga sola, da PowerShell (installa in `%USERPROFILE%\dwg-dxf-studio` e avvia):
+
+```
+git clone https://github.com/Lore11-P/dwg-dxf-studio.git "$env:USERPROFILE\dwg-dxf-studio"; & "$env:USERPROFILE\dwg-dxf-studio\installa.bat"
+```
+
+Serve **Windows 10/11** e **Python 3.10 o successivo** (provato con 3.14). Se manca Python,
+l'installer te lo dice con il link per scaricarlo. Per leggere e scrivere i **DWG** serve anche
+**ODA File Converter** (gratuito): vedi più sotto.
+
+## Installazione a mano
+
+Scarica la cartella con **Code → Download ZIP** oppure `git clone`, poi nella cartella dell'app:
 
 ```
 python -m venv .venv
